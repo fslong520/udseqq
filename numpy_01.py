@@ -10,8 +10,8 @@ import time
 
 import numpy
 
-if __name__ == '__main__':
-    start=time.time()
+# 使用numpy创建矩阵
+def class1():
     array = numpy.array([[1, 2, 3], ['a', 'b', 'c']])
     print('矩阵内容：\n', array)
     print('矩阵的维度：', array.ndim)
@@ -45,6 +45,24 @@ if __name__ == '__main__':
     array = numpy.linspace(0, 20, 20).reshape((5, 4))
     print('\n')
     print(array)
-    end=time.time()
-    print('总共执行的时间：%s'%(end-start))
-    #input()
+
+# numpy基础运算：
+def class2():
+    a=numpy.array([10,20,30,40])
+    b=numpy.arange(4)
+    print('a-b=',a-b)
+    print('a+b=',a+b)
+    print('a*b=',a*b)
+    print('a**2=',a**2)
+
+
+if __name__ == '__main__':
+    start=time.time()
+    class1()
+    end=time.time()    
+    print('class1总共执行的时间：%s'%(end-start))
+    start=time.time()
+    class2()
+    end=time.time()    
+    print('class2总共执行的时间：%s'%(end-start))
+
