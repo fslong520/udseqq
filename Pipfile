@@ -1,0 +1,16 @@
+[[source]]
+url = "https://mirrors.ustc.edu.cn/pypi/web/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyquery = "*"
+requests = "*"
+pillow = "*"
+pymysql = "*"
+numpy = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
