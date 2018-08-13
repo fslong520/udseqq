@@ -9,6 +9,7 @@ requests = "*"
 pillow = "*"
 pymysql = "*"
 numpy = "*"
+pandas = "*"
 
 [dev-packages]
 
