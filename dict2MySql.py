@@ -4,10 +4,11 @@
 ' 从字典存到数据库的函数 '
 
 __author__ = 'fslong'
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 
 import pymysql
 import traceback
+import datetime, json
 
 
 # 定义存储数据库的类
@@ -111,7 +112,12 @@ class MySQLConnection(object):
             if isinstance(self.dictData[i], (int, float)):
                 string = self.dictData[i]
             else:
-                string = '\"' + str(self.dictData[i]) + '\"'
+                try:
+                    self.dictData[i] = json.dumps(self.dictData[i])
+                except:
+                    pass
+                finally:
+                    string = '\"' + str(self.dictData[i]) + '\"'
             sql += """%s,""" % string
         sql = sql[0:-1] + """);"""
         results = self.executeSQL(sql)
