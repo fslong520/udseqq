@@ -33,13 +33,11 @@ class Spider(object):
             'User-Agent':
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/18.18204',
             'Accept':
-            'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            '*/*',
             'Accept-Language':
-            'en-US,en,zh-CN;q=0.5',
+            'zh-Hans-CN, zh-Hans; q=0.5',
             'Accept-Encoding':
-            'gzip, deflate, br',
-            'DNT':
-            '1',
+            'gzip, deflate',
             'Connection':
             'keep-alive',
         }
@@ -55,7 +53,8 @@ class Spider(object):
             name = hashlib.md5(str(time.time()).encode('utf-8')).hexdigest()
         else:
             name = name.replace('\n', '').replace('\r', '').replace(
-                '\t', '').replace('<br/>', '').replace('<br />', '').replace(' ', '')
+                '\t', '').replace('<br/>', '').replace('<br />', '').replace(
+                    ' ', '')
             name = re.sub(r'[\/\\\:\*\?\"\<\>\|]', '_', name)
         return name
 

@@ -87,7 +87,7 @@ class MySQLConnection(object):
                 # 获取所有记录列表
         except:
             traceback.print_exc()
-            results = '奇怪的MySq语句！'
+            results = None
             # 如果发生错误则回滚：
             db.rollback()
         # 关闭数据库链接：
@@ -114,9 +114,8 @@ class MySQLConnection(object):
             else:
                 try:
                     self.dictData[i] = json.dumps(self.dictData[i])
+                    string = str(self.dictData[i])
                 except:
-                    pass
-                finally:
                     string = '\"' + str(self.dictData[i]) + '\"'
             sql += """%s,""" % string
         sql = sql[0:-1] + """);"""
