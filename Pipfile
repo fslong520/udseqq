@@ -1,5 +1,5 @@
 [[source]]
-url = "https://mirrors.163.com/pypi/simple/"
+url = "https://mirrors.163.com/pypi/simple"
 verify_ssl = true
 name = "pypi"
 
@@ -13,6 +13,8 @@ lxml = "*"
 tensorflow = "*"
 numpy = "==1.14.5"
 matplotlib = "*"
+torch = "*"
+torchvision = "*"
 
 [dev-packages]
 
